@@ -38,11 +38,9 @@ public class SnakeHead : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene(0);
+            return;
         }
-    }
-
-    private void FixedUpdate()
-    {
+        
         var isTouch = Input.GetMouseButton(0);
 
         if (!_isStart && isTouch)

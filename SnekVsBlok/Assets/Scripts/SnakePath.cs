@@ -45,13 +45,12 @@ public class SnakePath
 
     public void UpdateNodePositions()
     {
+        if (_headPositions == null || _headPositions.Count == 0) return;
         int LastUpdatedNode = 0;
         int LastUsedHeadIndex = 0;
-        if (_headPositions == null || _headPositions.Count == 0) return;
-        Vector2 LatestNodePos = _headPositions[0];
         float distanceAddUp = 0;
+        Vector2 LatestNodePos = _headPositions[0];
         
-        float DistanceToLatestNode(Vector2 currentPos) =>  VectorToLatestNode(currentPos).magnitude;
         Vector2 VectorToLatestNode(Vector2 currentPos) =>  (currentPos - LatestNodePos);
         
         for (int i = 0; i < _headPositions.Count; i++)
